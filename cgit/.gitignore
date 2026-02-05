@@ -1,0 +1,27 @@
+# Ignore C build artifacts
+*.o   
+main     
+
+# Ignore Python cache and virtual environment
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+
+# Node.js dependencies
+node_modules/
+
+# TypeScript build output
+dist/
+
+# Temporary files
+*.log
+*.tmp
+*.lock
+*.tsbuildinfo
+
+# Editor settings
+.vscode/
+.idea/
+.DS_Store

@@ -1,0 +1,13 @@
+{
+  "txData": {
+    "nonce": "0x3fc",
+    "gasPrice": "0xf4247",
+    "gasLimit": "0x59d8",
+    "to": "0x64A0A7BA0d205b40091C91CB415e11bEc95BDE90",
+    "value": "0x1bc16d674ec80000",
+    "data": "0x",
+    "chainId": "0x3dfb48"
+  },
+  "unsignedRlpHex": "ef8203fc830f42478259d89464a0a7ba0d205b40091c91cb415e11bec95bde90881bc16d674ec8000080833dfb488080",
+  "msgHash": "c2d484e3b890884bb5794213c2e7669e194b5e9214036a682424f22dcc0e2327"
+}
