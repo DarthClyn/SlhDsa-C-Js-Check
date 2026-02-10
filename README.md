@@ -51,7 +51,7 @@ While integrating the signing code into the existing Qinvi stable version, we ar
 
 ### What this means
 
-This error generally indicates one of two issues: :contentReference[oaicite:0]{index=0}
+This error generally indicates one of two issues: 
 
 - The **JavaScript bundle has a loading error**, so native modules don’t initialize correctly. 
 - OR **a native dependency is crashing when loaded**, preventing React Native from starting properly. 
