@@ -67,4 +67,4 @@ To use it you would need to:
 - Bundle it with the app
 - Integrate it into the native build and JNI bridge
 
-This is *
+This is *This is **complex and error-prone**, and without it the native modules fail to load, leading to the observed error. :contentReference[oaicite:3]{index=3}
