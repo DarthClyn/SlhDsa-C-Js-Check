@@ -25,14 +25,9 @@
 
 
 static const char *PRIVATE_KEY_HEX =
-"a605bbd462d4183e697cc20376d6c26ba837e51a1db48052178aa23b9fdefcb1"
-"233e6b4024a5df164fdb3d9dd52aeeb4643fba12aad87d7c885f2e44d2b245ae"
-"d273339e00ab29cfe605adaa180dc933b9269e177e89e2b575f82056f25b697b"
-"a125d2f522d3e0e7c5bd5d6edf4a14857bc55828d36768b85cfd1d41d89faaeb";
+"1ec733d6e67885e5ca0cb1c535239736011835e94c8112b0e76b70054e08792596291888948f31a3881fa2c9908acc96ba3ae3e09359b0dc4ebe2447daa9305badec84eda4a6f1543f75c3220bc86c3ecefc14c7d6ff52e2a8e1adcd8300eb20de1e3b742cbc79664d910fbe99b95cb1c6d8a91e8c87c9273abda081d220f0de";
 
-static const char *PUBLIC_KEY_HEX =
-"d273339e00ab29cfe605adaa180dc933b9269e177e89e2b575f82056f25b697b"
-"a125d2f522d3e0e7c5bd5d6edf4a14857bc55828d36768b85cfd1d41d89faaeb";
+static const char *PUBLIC_KEY_HEX ="";
 
 /* =========================================================
    Helpers
