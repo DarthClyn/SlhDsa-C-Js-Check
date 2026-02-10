@@ -61,7 +61,7 @@ In our case, it’s **mostly the second one**.
 ### Current Suspect
 
 The likely cause is that **libgcrypt is not natively available on Android**.  
-To use it you would need to:
+To use it we would need to:
 
 - Cross-compile **libgcrypt for Android**
 - Bundle it with the app
