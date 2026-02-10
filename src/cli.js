@@ -173,6 +173,8 @@ async function createTransaction() {
   const rlpEncoded = rlp.encode(unsignedFields);
   const msgHash = keccak256(rlpEncoded);
 
+
+  // Write only privateKey for C signer
   fs.writeFileSync(
     "trxn.json",
     JSON.stringify(
@@ -180,6 +182,7 @@ async function createTransaction() {
         txData,
         unsignedRlpHex: Buffer.from(rlpEncoded).toString("hex"),
         msgHash: Buffer.from(msgHash).toString("hex"),
+        privateKey: keypair.privateKeyRaw.toString("hex"),
       },
       null,
       2
@@ -197,7 +200,9 @@ async function createTransaction() {
 // =====================
 async function signTransaction() {
   const trxn = JSON.parse(fs.readFileSync("trxn.json"));
-  const keypair = await deriveFromPrivateKey(FIXED_PRIVKEY);
+  // Use privateKey from trxn.json if present, else fallback
+  const privHex = trxn.privateKey ? (trxn.privateKey.startsWith("0x") ? trxn.privateKey : "0x" + trxn.privateKey) : FIXED_PRIVKEY;
+  const keypair = await deriveFromPrivateKey(privHex);
 
   // ✅ Load precomputed hash
   const msgHash = Buffer.from(trxn.msgHash, "hex");
@@ -209,11 +214,10 @@ async function signTransaction() {
 
   const sigHex =
     "0x" +
-    Buffer.from(sigBytes).toString("hex") +
-    keypair.publicKeyHex;
+    Buffer.from(sigBytes).toString("hex");
 
   fs.writeFileSync("sign.json", JSON.stringify({ sig: sigHex }, null, 2));
-  console.log("Transaction signed using stored msgHash");
+  console.log("Transaction signed using stored msgHash and privateKey from trxn.json");
 }
 
 

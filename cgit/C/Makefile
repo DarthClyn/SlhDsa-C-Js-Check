@@ -19,17 +19,15 @@ else
     INFO_MSG = "Using Reference Keccak implementation"
 endif
 
-short:
-	@echo $(INFO_MSG)
-	gcc $(CFLAGS) -c $(KECCAK_SRC) -o $(KECCAK_OBJ)
-	gcc $(CFLAGS) main.c external.c internal.c $(KECCAK_OBJ) KeccakSpongeWidth1600.c \
-	    fors.c hypertree.c xmss.c wots.c adrs.c shake.c params.c \
-	    -o main -O3 -lgcrypt -lsodium -lssl -lcrypto -lm -lcjson
+trxn:
+    @echo $(INFO_MSG)
+    gcc $(CFLAGS) trxn.c external.c internal.c $(KECCAK_OBJ) KeccakSpongeWidth1600.c \
+        fors.c hypertree.c xmss.c wots.c adrs.c shake.c params.c \
+        -o trxn -O3 -lgcrypt -lsodium -lm -lcjson
 trxn:
 	@echo $(INFO_MSG)
 	gcc $(CFLAGS) trxn.c external.c internal.c $(KECCAK_OBJ) KeccakSpongeWidth1600.c \
 	    fors.c hypertree.c xmss.c wots.c adrs.c shake.c params.c \
-	    -o trxn -O3 -lgcrypt -lsodium -lssl -lcrypto -lm -lcjson
+        -o trxn -O3 -lgcrypt -lsodium -lm -lcjson
 
-clean:
-	rm -f main trxn *.o
+    rm -f trxn *.o
